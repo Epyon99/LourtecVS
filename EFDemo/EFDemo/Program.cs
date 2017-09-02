@@ -37,6 +37,8 @@ namespace EFDemo
         }
         static void Main(string[] args)
         {
+            CodeFirst.MenuContext contexto = new CodeFirst.MenuContext();
+
             Guid g = Guid.NewGuid();
             CodeFirst.Te te = new CodeFirst.Te()
             {
