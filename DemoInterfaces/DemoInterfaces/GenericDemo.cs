@@ -24,7 +24,7 @@ namespace DemoInterfaces
             for(int i = 0; i < gatos.Length; i++)
             {
                 yield return gatos[i];
-            }
+            }            
         }
 
         IEnumerator IEnumerable.GetEnumerator()
