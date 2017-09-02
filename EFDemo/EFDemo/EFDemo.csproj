@@ -57,6 +57,7 @@
     <Compile Include="Cafes.cs">
       <DependentUpon>ModelFirst.tt</DependentUpon>
     </Compile>
+    <Compile Include="CafesPartial.cs" />
     <Compile Include="CodeFirst\Menu.cs" />
     <Compile Include="DatabaseFirst.Context.cs">
       <AutoGen>True</AutoGen>

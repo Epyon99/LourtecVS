@@ -40,9 +40,8 @@ namespace EFDemo.CodeFirst
 
         [ForeignKey("Menu")]
         public Guid MenuId { get; set; }
-        //public string Infusion { get; set; }
+        public string Infusion { get; set; }
         public string Textura { get; set; }
-
         public string Aroma { get; set; }
         public virtual Menu Menu { get; set; }
     }
@@ -58,8 +57,8 @@ namespace EFDemo.CodeFirst
         {
 
         }
-        //public DbSet<Menu> Menus { get; set; }
-        //public DbSet<Cafe> Cafes { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<Cafe> Cafes { get; set; }
         public DbSet<Te> Tes { get; set; }
         public DbSet<Refresco> Resfrescos { get; set; }
     }
