@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A07B26E7-78C4-4FFE-9904-70384034DE8D}</ProjectGuid>
+    <ProjectGuid>{4E08A7EB-C980-4169-892A-817D671BE283}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DemoGenericAndExtensionMethods</RootNamespace>
-    <AssemblyName>DemoGenericAndExtensionMethods</AssemblyName>
+    <RootNamespace>DemoFileDP</RootNamespace>
+    <AssemblyName>DemoFileDP</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cocinar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
