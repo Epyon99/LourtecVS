@@ -25,6 +25,7 @@ Este es el repositorio de lo demos del profesor!
         DateTime FechaInicio { get; set; }
         DateTime FechaFin { get; set; }
 ###--------------LAZY EJEMPLO -------------------------------
+
 abcd, abcd company, { {a, b, c, d},{d,e,f,g} } , id, Fecha, Fecha
 
 
