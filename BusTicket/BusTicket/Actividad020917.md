@@ -1,13 +1,4 @@
-# LourtecVS
-
-
-Hola clase!
-
-Este es el repositorio de lo demos del profesor!
-
-
-# 02/09/2017
-# Modificaciones a hacer en la aplicacion de Tickets
+﻿# Modificaciones a la aplicacion de Tickets
 
 1 ) Cambiar struct por class
 2 ) Generar rutas de viaje y Lugares de destino. Carguen los datos de un archivo XML, JSON, CSV.
