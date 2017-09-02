@@ -24,6 +24,12 @@ namespace DemoExceptionsTypes
                 // Errores personalizados por un flujo de datos
                 var data = Console.ReadLine();
 
+
+                // Pueden colocar los bloques try-catch
+                // 1) Secciones especificas con errores de memoria o volatiles.
+                // MemoryStream, HttpRequest, SqlServer, ADO.NET
+                // 2) En secciones que instancian capas de servicios. Reciben errores personalizados
+                // 3) un Try-catch generico en el flujo principal de UI.
                 try
                 {
 
