@@ -15,7 +15,6 @@ namespace EFDemo
             model.Teas.Add(new Tea());
             model.SaveChanges();
             Console.ReadKey();
-
         }
     }
 }
