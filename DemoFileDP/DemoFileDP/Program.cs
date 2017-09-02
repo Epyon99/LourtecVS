@@ -25,7 +25,7 @@ namespace DemoFileDP
             // Streams
             try
             {
-                if (stream == null) stream = File.Open(filepath, FileMode.Append);
+                if (stream == null) stream = File.Open(filepath, FileMode.Append,FileAccess.Write);
                 using (StreamWriter sw = new StreamWriter(stream))
                 {
                     Console.WriteLine($"---------Stream Writer-----------");
@@ -88,6 +88,7 @@ namespace DemoFileDP
                 //Console.WriteLine(v);
             }
             Console.ReadKey();
+            
         }
     }
 }
