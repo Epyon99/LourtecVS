@@ -42,6 +42,7 @@ namespace DemoExceptionsTypes
                     }
 
                 }
+                // Mas especifica 
                 catch (MoisesException m)
                 {
                     Console.WriteLine($"Mensaje:{m.Message}");
@@ -56,6 +57,7 @@ namespace DemoExceptionsTypes
                 {
                     Console.WriteLine($"Excepcion nula:{exn.Message}");
                 }
+                // Mas generica
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
