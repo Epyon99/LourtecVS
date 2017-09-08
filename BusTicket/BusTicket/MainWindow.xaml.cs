@@ -1,6 +1,7 @@
 ﻿using BusTicket.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,13 @@ namespace BusTicket
         public List<Localizacion> Estaciones { get; set; }
         public MainWindow()
         {
+            FileStream fs = new FileStream("archivo.json", FileMode.OpenOrCreate);
+            using (StreamReader sr = new StreamReader(fs))
+            {
+                string json = sr.ReadToEnd();
+                List<Localizacion> x= JsonConverter.Deserialize(json);
+                List<Rutas> x = JsonConverter.Deserialize(json);
+            }
             Estaciones = new List<Localizacion>()
             {
                 new Localizacion()
