@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using UCV.Comun.Modelos;
 using UCV.DatabaseAccess.Contextos;
 using UCV.DatabaseAccess.Servicios;
@@ -11,9 +12,76 @@ namespace UCV.DatabaseAccess
 {
     class Program
     {
+        public static void TestingTXScopes()
+        {
+            var testContext = new SqlAnalisisContexto();
+            var db = new SqlBusContexto();
+            using (var scope = new TransactionScope(TransactionScopeOption.Required))
+            {
+                try
+                {
+                   var q = db.Companias;
+                    db.SaveChanges();
+
+                    var q1 = db.Companias;
+                    var c1 = q1.FirstOrDefault();
+                    c1.Ruc = "Nuevo";
+                    var c2 = new Compania() { Id = Guid.NewGuid() };
+                    db.Companias.Add(c2);
+                    db.SaveChanges();
+
+
+                    var q2 = db.Companias;
+                    var c3 = q2.FirstOrDefault();
+                    db.Companias.Remove(c3);
+                    db.SaveChanges();
+
+                    var aq = testContext.Rutas.Add(new Ruta() { Id = Guid.NewGuid() });
+                    testContext.SaveChanges();
+
+
+                    scope.Complete();
+                }
+                catch
+                {
+                    scope.Dispose();
+                }
+            }
+        }
+
+        public void TestingTXBeginEnd()
+        {
+            using (var context = new SqlBusContexto())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        context.Database.ExecuteSqlCommand($"SELECT * FROM Companias");
+
+                        var consulta = context.Companias;
+                        foreach (var i in consulta)
+                        {
+                            i.Calificacion = 100000;
+                        }
+                        context.SaveChanges();
+                        dbContextTransaction.Commit();
+                    }
+                    catch
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
+            TestMethod();
+            
+
             var servicioCompania = new ServicioCompania();
+
             var compania = new Compania()
             {
                 Ruc = $"Ruc Unico {new Random().Next(1, 10000).ToString()}",
@@ -50,6 +118,7 @@ namespace UCV.DatabaseAccess
             companiaSimple.Ruc += " Modificado 2";
 
             servicioCompania.UpdateCompania(companiaSimple);
+            servicioCompania.DeleteCompania(companiaSimple);
 
             while (true)
             {

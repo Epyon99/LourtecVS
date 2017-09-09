@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using UCV.Comun.Interfaces;
 using UCV.Comun.Modelos;
 using UCV.DatabaseAccess.Contextos;
@@ -18,15 +19,56 @@ namespace UCV.DatabaseAccess.Servicios
             db = new SqlBusContexto();
         }
 
-        public bool DeleteCompania(Compania Compania)
+        public bool DeleteCompania(Compania compania)
         {
-            throw new NotImplementedException();
+            var c = db.Companias.FirstOrDefault(g => g.Id == compania.Id);
+            try
+            {
+                db.Companias.Remove(c);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
+
+        
 
         public List<Compania> GetCompanias()
         {
             // SELECT * FROM Companias;
-            return db.Companias.ToList();
+            return db.Companias.
+                ToList().
+                Select(g => new Compania
+                {
+                    Id = g.Id,
+                    Calificacion =
+                   g.Calificacion,
+                    Ruc = g.Ruc
+                }).
+                ToList();
+        }
+
+        public List<Compania> GetCompanias(string ruc)
+        {
+            return db.Companias.Where(g => g.Ruc.Contains(ruc)).ToList();
+        }
+
+        public List<Compania> GetCompanias(string ruc, int calificacion)
+        {
+            return db.Companias.Where(g => g.Ruc.Contains(ruc) && g.Calificacion > calificacion).ToList();
+        }
+
+        public List<Compania> GetCompanias(int calificacion)
+        {
+            return db.Companias.Where(g => g.Calificacion > calificacion).ToList();
+        }
+
+        public Compania GetCompania(Guid id)
+        {
+            return db.Companias.FirstOrDefault(g => g.Id == id);
         }
 
         public void SaveCompania(Compania compania)
@@ -97,16 +139,6 @@ namespace UCV.DatabaseAccess.Servicios
             c.Calificacion = compania.Calificacion;
 
             db.SaveChanges();
-        }
-
-        public void UpdateCompania(Guid companiaId, Compania compania)
-        {
-
-        }
-
-        public void UpdateCompania(Guid companiaId, string ruc, int calificacion)
-        {
-
         }
     }
 }

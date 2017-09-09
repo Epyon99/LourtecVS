@@ -11,6 +11,15 @@ namespace UCV.Comun.Interfaces
     {
         List<Compania> GetCompanias();
 
+        List<Compania> GetCompanias(string ruc);
+
+        List<Compania> GetCompanias(string ruc, int calificacion);
+
+        List<Compania> GetCompanias(int calificacion);
+
+        Compania GetCompania(Guid id);
+
+
         void SaveCompania(Compania Compania);
 
         void SaveCompania(List<Compania> Compania);
