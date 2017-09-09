@@ -19,6 +19,9 @@ namespace UCV.DatabaseAccess
                 Ruc = $"Ruc Unico {new Random().Next(1, 10000).ToString()}",
                 Calificacion = new Random().Next(1, 10)
             };
+            var cc = new Compania();
+            cc.Ruc = "Hola Mundo";
+            cc.Calificacion = 1;
 
             var companias = new List<Compania>()
             {
@@ -27,16 +30,21 @@ namespace UCV.DatabaseAccess
                     Ruc = $"Ruc Masico Unico {new Random().Next(1, 10000).ToString()}",
                     Calificacion = new Random().Next(1, 10)
                 },
-                null,
-                new Compania()
-                {
-                    Ruc = string.Empty,
-                    Calificacion = 1,
-                }
             };
+            var ll = new List<Compania>();
+            ll.Add(cc);
+            ll.Add(null);
 
-            servicioCompania.SaveCompania(compania);
-            servicioCompania.SaveCompania(companias);
+            try
+            {
+                servicioCompania.SaveCompania(compania);
+                servicioCompania.SaveCompania(companias);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No se pudo hacer un guardado: " + e.Message);
+            }
+
             foreach (var c in servicioCompania.GetCompanias())
             {
                 Console.WriteLine($"-- Registro ---");
