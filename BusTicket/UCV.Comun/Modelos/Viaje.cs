@@ -8,8 +8,16 @@ namespace UCV.Comun.Modelos
 {
     public class Viaje
     {
+        /// <summary>
+        /// Summary se genera sobre una miembro de clase, con
+        /// tres /// seguidos
+        /// </summary>
+        private Compania company;
         public Compania Compania { get; set; }
 
         public Ruta Ruta { get; set; }
+
+        public decimal Costo { get; set; }
+
     }
 }

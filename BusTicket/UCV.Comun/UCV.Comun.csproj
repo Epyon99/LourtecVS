@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IServiciosRuta.cs" />
     <Compile Include="Modelos\Compania.cs" />
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\Ruta.cs" />
