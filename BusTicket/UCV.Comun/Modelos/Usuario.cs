@@ -2,7 +2,7 @@
 
 namespace UCV.Comun.Modelos
 {
-    public class Usuario
+    public class Usuario : BaseClass
     {
         public string NombreCompleto { get; set; }
 

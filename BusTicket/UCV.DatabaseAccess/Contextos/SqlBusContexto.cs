@@ -4,11 +4,15 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UCV.Comun.Modelos;
 
 namespace UCV.DatabaseAccess.Contextos
 {
     public class SqlBusContexto : DbContext
     {
+        public SqlBusContexto() : base("SqlBusContexto")
+        {
+        }
         public DbSet<Compania> Companias { get; set; }
 
         public DbSet<Reserva> Reservas { get; set; }
