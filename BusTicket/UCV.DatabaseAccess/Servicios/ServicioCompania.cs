@@ -26,7 +26,7 @@ namespace UCV.DatabaseAccess.Servicios
         public List<Compania> GetCompanias()
         {
             // SELECT * FROM Companias;
-            return db.Companias.Where(g=> true).Take(20).ToList();
+            return db.Companias.ToList();
         }
 
         public void SaveCompania(Compania compania)
@@ -77,9 +77,36 @@ namespace UCV.DatabaseAccess.Servicios
             db.SaveChanges();
         }
 
-        public void UpdateCompania(Compania Compania)
+        public void UpdateCompania(Compania compania)
         {
-            throw new NotImplementedException();
+            // Una coleccion de resultados o una coleccion con 0 elementos.
+            IEnumerable<Compania> collection = db.Companias.Where(g => g.Id == compania.Id).ToList();
+
+            // El primer elemento siempre
+            ///collection.FirstOrDefault();
+            // Devuelve el unico elemento en una coleccion, si hay mas de uno falla
+            ///collection.Single();
+
+            // Single va a arrojar una exception si no hay ningun resultado o hay duplicidad.
+            Compania single = db.Companias.Single(g => g.Id == compania.Id);
+
+            // First or default puede devolver Un valor por defecto ya null o vacio.
+            Compania c = db.Companias.FirstOrDefault(g => g.Id == compania.Id);
+
+            c.Ruc = compania.Ruc;
+            c.Calificacion = compania.Calificacion;
+
+            db.SaveChanges();
+        }
+
+        public void UpdateCompania(Guid companiaId, Compania compania)
+        {
+
+        }
+
+        public void UpdateCompania(Guid companiaId, string ruc, int calificacion)
+        {
+
         }
     }
 }

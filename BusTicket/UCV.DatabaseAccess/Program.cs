@@ -19,9 +19,6 @@ namespace UCV.DatabaseAccess
                 Ruc = $"Ruc Unico {new Random().Next(1, 10000).ToString()}",
                 Calificacion = new Random().Next(1, 10)
             };
-            var cc = new Compania();
-            cc.Ruc = "Hola Mundo";
-            cc.Calificacion = 1;
 
             var companias = new List<Compania>()
             {
@@ -31,9 +28,6 @@ namespace UCV.DatabaseAccess
                     Calificacion = new Random().Next(1, 10)
                 },
             };
-            var ll = new List<Compania>();
-            ll.Add(cc);
-            ll.Add(null);
 
             try
             {
@@ -51,6 +45,11 @@ namespace UCV.DatabaseAccess
                 Console.WriteLine($"{c.Id}-{c.Ruc}-{c.Calificacion}");
             }
 
+            var companiaSimple = servicioCompania.GetCompanias().FirstOrDefault();
+            companiaSimple.Calificacion = 100;
+            companiaSimple.Ruc += " Modificado 2";
+
+            servicioCompania.UpdateCompania(companiaSimple);
 
             while (true)
             {
