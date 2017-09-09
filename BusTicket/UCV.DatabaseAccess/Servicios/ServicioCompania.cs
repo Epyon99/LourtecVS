@@ -12,6 +12,9 @@ namespace UCV.DatabaseAccess.Servicios
 {
     public class ServicioCompania : IServiciosCompania
     {
+        // Linq References
+        // http://linq101.nilzorblog.com/linq101-lambda.php
+        // https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b
         SqlBusContexto db;
 
         public ServicioCompania()

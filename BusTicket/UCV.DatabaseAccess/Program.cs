@@ -51,6 +51,7 @@ namespace UCV.DatabaseAccess
 
         public void TestingTXBeginEnd()
         {
+            //https://msdn.microsoft.com/en-us/library/dn456843(v=vs.113).aspx
             using (var context = new SqlBusContexto())
             {
                 using (var dbContextTransaction = context.Database.BeginTransaction())
@@ -76,9 +77,7 @@ namespace UCV.DatabaseAccess
         }
 
         static void Main(string[] args)
-        {
-            TestMethod();
-            
+        {           
 
             var servicioCompania = new ServicioCompania();
 
