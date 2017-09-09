@@ -14,10 +14,10 @@ namespace UCV.DatabaseAccess
     {
         public static void TestingTXScopes()
         {
-            var testContext = new SqlAnalisisContexto();
-            var db = new SqlBusContexto();
             using (var scope = new TransactionScope(TransactionScopeOption.Required))
             {
+                var testContext = new SqlAnalisisContexto();
+                var db = new SqlBusContexto();
                 try
                 {
                    var q = db.Companias;
