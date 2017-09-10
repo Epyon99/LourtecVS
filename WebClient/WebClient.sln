@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{F2A278EE-1ADE-4D0A-BE77-0FA82B975C72}"
+	ProjectSection(ProjectDependencies) = postProject
+		{011BF9ED-A47B-45F1-B6A1-90EF4E7F50A0} = {011BF9ED-A47B-45F1-B6A1-90EF4E7F50A0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServiceT", "TestServiceT\TestServiceT.csproj", "{011BF9ED-A47B-45F1-B6A1-90EF4E7F50A0}"
 EndProject

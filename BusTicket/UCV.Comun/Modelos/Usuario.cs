@@ -7,5 +7,9 @@ namespace UCV.Comun.Modelos
         public string NombreCompleto { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
+
+        public string Username { get; set; }
+
+        public string Password { get; set; }
     }
 }
