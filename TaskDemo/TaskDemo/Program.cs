@@ -13,7 +13,20 @@ namespace TaskDemo
         static async void Main(string[] args)
         {
             AsyncClass c = new AsyncClass();
+            
+            // Cuando devuelve void sin async/await
             c.SumaAsync(1, 2).Wait();
+
+            // cuando devuelve un valor sin async/await
+            Task<int> asd = c.SumaAsync(1,2);
+            asd.Wait();
+            var valor = asd.Result;
+            
+            // Cuando devuelve void con async/await
+            await c.SumaAsync(1, 2);
+
+            // cuando devuelve un valor con async/await
+            var v = await c.SumaAsync(1, 2);
         }
 
         public static void ParallelAsync()
