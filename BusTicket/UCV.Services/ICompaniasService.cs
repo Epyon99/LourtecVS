@@ -16,6 +16,23 @@ namespace UCV.Services
         List<Compania> GetCompanias();
 
         [OperationContract]
+        List<Compania> GetCompanias(string id, string ruc, int calificacion);
+
+        [OperationContract]
+        List<Compania> GetCompaniasContains(string id);
+
+        [OperationContract]
+        List<Compania> GetCompanias(string id,string ruc);
+
+        [OperationContract]
+        List<Compania> GetCompanias(string id,int calificacion);
+
+        [OperationContract]
+        Compania GetCompania(string id);
+
+
+
+        [OperationContract]
         void SaveCompania(Compania compania);
 
         [OperationContract]

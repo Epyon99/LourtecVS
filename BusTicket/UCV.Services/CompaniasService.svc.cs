@@ -21,9 +21,34 @@ namespace UCV.Services
             dao.DeleteCompania(compania);
         }
 
+        public Compania GetCompania(string id)
+        {
+            return dao.GetCompania(new Guid(id));
+        }
+
         public List<Compania> GetCompanias()
         {
             return dao.GetCompanias();
+        }
+
+        public List<Compania> GetCompanias(string id, string ruc, int calificacion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compania> GetCompanias(string id, string ruc)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compania> GetCompanias(string id, int calificacion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compania> GetCompaniasContains(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public void SaveCompania(Compania compania)

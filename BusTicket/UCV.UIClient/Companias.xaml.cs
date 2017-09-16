@@ -25,5 +25,12 @@ namespace UCV.UIClient
             InitializeComponent();
             Lista.ItemsSource = client.GetCompanias();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var col = client.GetCompanias().ToList();
+            col = col.Where(g => g.Ruc != null && g.Ruc.Contains(Filtro.Text)).ToList();
+            Lista.ItemsSource = col;
+        }
     }
 }
