@@ -33,7 +33,7 @@ namespace FourthCoffee.MessageSafe
         private void save_Click(object sender, RoutedEventArgs e)
         {
             this.SaveMessage();
-
+            
             this.status.Content = "Message saved..";
         }
 
@@ -107,7 +107,7 @@ namespace FourthCoffee.MessageSafe
             {
                 this.save.IsEnabled = true;
                 this.messageText.IsEnabled = true;
-                this.load.IsEnabled = false;
+                this.load.IsEnabled = true;
 
             }
             else
