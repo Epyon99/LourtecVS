@@ -28,13 +28,18 @@ namespace UCV.DatabaseAccess.Servicios
             try
             {
                 db.Companias.Remove(c);
-                db.SaveChanges();
+                db.SaveChangesAsync().Wait();
                 return true;
             }
             catch (Exception ex)
             {
                 return false;
             }
+        }
+
+        public Task<bool> DeleteCompaniaAsync(Compania compania)
+        {
+            return Task.Run(()=> { return DeleteCompania(compania); });
         }
 
         
