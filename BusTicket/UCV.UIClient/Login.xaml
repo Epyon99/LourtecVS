@@ -1,0 +1,19 @@
+﻿<Window x:Class="UCV.UIClient.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UCV.UIClient"
+        mc:Ignorable="d"
+        Title="Login" Height="300" Width="300">
+    <Grid x:Name="loginGrid">
+        <Button Click="Button_Click" Content="Acceder" HorizontalAlignment="Left" Margin="162,223,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Borrar" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="87,153,0,0" VerticalAlignment="Top" Width="120"  Text="{Binding Path=Usuario.Password, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="87,94,0,0" Text="{Binding Path=Usuario.Username, Mode=TwoWay}"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="87,122,0,0" VerticalAlignment="Top"/>
+        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="87,63,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Aplicacion de Registro de Tickets" VerticalAlignment="Top" Width="272" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="37" Text="{Binding Path=Usuario.ErrorMessage, Mode=TwoWay}"/>
+    </Grid>
+</Window>
