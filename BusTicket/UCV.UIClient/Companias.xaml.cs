@@ -26,11 +26,23 @@ namespace UCV.UIClient
             Lista.ItemsSource = client.GetCompanias();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public override async void BeginInit()
         {
-            var col = client.GetCompanias().ToList();
+            base.BeginInit();
+            var z = await Task.Run(() => { return client.GetCompanias(); });
+            Lista.ItemsSource = z;
+        }
+
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (sender as Button).IsEnabled = false;
+            var col = (await Task.Run(() => { return client.GetCompanias(); })).ToList();
             col = col.Where(g => g.Ruc != null && g.Ruc.Contains(Filtro.Text)).ToList();
             Lista.ItemsSource = col;
+            await Task.Delay(5000).ContinueWith(g => MessageBox.Show("Hola Mundo:" + DateTime.Now.Millisecond
+                 ));
+            (sender as Button).IsEnabled = true;
         }
     }
 }

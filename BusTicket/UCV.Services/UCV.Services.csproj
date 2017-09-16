@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="CompaniasService.svc" />
     <Content Include="Service1.svc" />
+    <Content Include="Service\Rutas.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +83,10 @@
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IRutas.cs" />
+    <Compile Include="Service\Rutas.svc.cs">
+      <DependentUpon>Rutas.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

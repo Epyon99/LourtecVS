@@ -16,16 +16,16 @@ namespace UCV.Services
         List<Compania> GetCompanias();
 
         [OperationContract]
-        List<Compania> GetCompanias(string id, string ruc, int calificacion);
+        List<Compania> GetCompaniasAllFilters(string id, string ruc, int calificacion);
 
         [OperationContract]
         List<Compania> GetCompaniasContains(string id);
 
         [OperationContract]
-        List<Compania> GetCompanias(string id,string ruc);
+        List<Compania> GetCompaniasByIdAndRuc(string id,string ruc);
 
         [OperationContract]
-        List<Compania> GetCompanias(string id,int calificacion);
+        List<Compania> GetCompaniasByIdAndCal(string id,int calificacion);
 
         [OperationContract]
         Compania GetCompania(string id);

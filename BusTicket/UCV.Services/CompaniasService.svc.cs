@@ -46,6 +46,21 @@ namespace UCV.Services
             throw new NotImplementedException();
         }
 
+        public List<Compania> GetCompaniasAllFilters(string id, string ruc, int calificacion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compania> GetCompaniasByIdAndCal(string id, int calificacion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compania> GetCompaniasByIdAndRuc(string id, string ruc)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Compania> GetCompaniasContains(string id)
         {
             throw new NotImplementedException();
