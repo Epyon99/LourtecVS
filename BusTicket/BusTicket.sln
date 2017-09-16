@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.DatabaseAccess", "UCV.DatabaseAccess\UCV.DatabaseAccess.csproj", "{9E88DA5D-9D2D-4596-B269-AD7FD4BB418C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.UIClient", "UCV.UIClient\UCV.UIClient.csproj", "{DF629257-F345-4E85-9C40-283EF37B293B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9674CC32-725E-40D2-BC56-0F75923F0944} = {9674CC32-725E-40D2-BC56-0F75923F0944}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.Services", "UCV.Services\UCV.Services.csproj", "{9674CC32-725E-40D2-BC56-0F75923F0944}"
 EndProject

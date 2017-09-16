@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UCV.UIClient.UCV.Proxy {
+namespace UCV.UIClient.Proxy {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -41,12 +41,12 @@ namespace UCV.UIClient.UCV.Proxy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICompaniasServiceChannel : UCV.UIClient.UCV.Proxy.ICompaniasService, System.ServiceModel.IClientChannel {
+    public interface ICompaniasServiceChannel : UCV.UIClient.Proxy.ICompaniasService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CompaniasServiceClient : System.ServiceModel.ClientBase<UCV.UIClient.UCV.Proxy.ICompaniasService>, UCV.UIClient.UCV.Proxy.ICompaniasService {
+    public partial class CompaniasServiceClient : System.ServiceModel.ClientBase<UCV.UIClient.Proxy.ICompaniasService>, UCV.UIClient.Proxy.ICompaniasService {
         
         public CompaniasServiceClient() {
         }

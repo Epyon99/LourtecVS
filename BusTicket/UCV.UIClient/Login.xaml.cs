@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using UCV.Comun.ViewModels;
+using UCV.UIClient.Proxy;
 
 namespace UCV.UIClient
 {
@@ -24,8 +25,8 @@ namespace UCV.UIClient
 
         public Login()
         {
-            UCV.Proxy.CompaniasServiceClient s = new UCV.Proxy.CompaniasServiceClient();
-            s.GetCompanias();
+            CompaniasServiceClient s = new CompaniasServiceClient();
+            var s3 = s.GetCompanias();
             vm = new LoginViewModel();
             InitializeComponent();
             loginGrid.DataContext = vm ;

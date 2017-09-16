@@ -13,6 +13,7 @@ namespace UCV.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select CompaniasService.svc or CompaniasService.svc.cs at the Solution Explorer and start debugging.
     public class CompaniasService : ICompaniasService
     {
+        // Run sin debug, Ctrl + F5
         ServicioCompania dao = new ServicioCompania();
 
         public void DeleteCompania(Compania compania)
