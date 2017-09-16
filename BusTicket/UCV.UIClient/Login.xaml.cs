@@ -23,7 +23,9 @@ namespace UCV.UIClient
         LoginViewModel vm;
 
         public Login()
-        { 
+        {
+            UCV.Proxy.CompaniasServiceClient s = new UCV.Proxy.CompaniasServiceClient();
+            s.GetCompanias();
             vm = new LoginViewModel();
             InitializeComponent();
             loginGrid.DataContext = vm ;
