@@ -13,9 +13,18 @@ namespace DisposePattern
     {
         static void Main(string[] args)
         {
-            ClaseDesechable c = new ClaseDesechable();
-            c.Dispose();
+            // Necesita utilizar dispose.
+            ClaseDesechable c = null;
+            try
+            {
+                c = new ClaseDesechable();
+            }
+            finally
+            {
+                c.Dispose();
+            }
 
+            // No necesitan usar dispose
             using (ClaseDesechable cv = new ClaseDesechable())
             {
 
